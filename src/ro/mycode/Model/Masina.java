@@ -82,14 +82,8 @@ public class Masina implements Comparable<Masina>{
 
     @Override
     public String toString() {
-        String text = "";
-        text += "Model: " + this.model + "\n";
-        text += "Firma: " + this.firma + "\n";
-        text += "An: "+ this.an + "\n";
-        text += "Geamuri electrice: " + this.geamuriElectrice + "\n";
-        text += "Combustibil: " + this.combustibil + "\n";
-        text += "Motor: " + this.motor + "\n";
-        return text;
+        return this.model+","+this.firma+","+this.an+","+this.geamuriElectrice+","+this.combustibil+","+this.motor;
+
     }
 
     public void afisare() {

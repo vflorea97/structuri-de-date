@@ -22,10 +22,7 @@ public class Persoane {
 
     @Override
     public String toString() {
-        String text = "";
-        text += "Nume: " + this.nume + "\n";
-        text += "Varsta: " + this.varsta + "\n";
-        return text;
+        return this.nume+","+this.varsta;
     }
 
     public void afisare() {
