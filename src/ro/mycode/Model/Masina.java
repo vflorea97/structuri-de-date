@@ -18,6 +18,20 @@ public class Masina implements Comparable<Masina>{
         this.motor = motor;
     }
 
+    public Masina(String text){
+        String [] prop = text.split(",");
+        this.model = prop[0];
+        this.firma = prop[1];
+        this.an = Integer.parseInt(prop[2]);
+        this.geamuriElectrice = Boolean.parseBoolean(prop[3]);
+        this.combustibil = prop[4];
+        this.motor = Double.parseDouble(prop[5]);
+    }
+
+    public String toSave(){
+        return this.model+","+this.firma+","+this.an+","+this.geamuriElectrice+","+this.combustibil+","+this.motor;
+    }
+
     public String getModel() {
         return model;
     }

@@ -10,6 +10,16 @@ public class Persoane {
         this.varsta = varsta;
     }
 
+    public Persoane(String text){
+        String [] prop = text.split(",");
+        this.nume = prop[0];
+        this.varsta = Integer.parseInt(prop[1]);
+    }
+
+    public String toSave(){
+        return this.nume+","+this.varsta;
+    }
+
     @Override
     public String toString() {
         String text = "";
