@@ -5,6 +5,8 @@ import ro.mycode.Model.Persoane;
 import ro.mycode.structurigenerice.List;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Controller<U> {
@@ -14,6 +16,9 @@ public class Controller<U> {
     public Controller(String model){
         list = new List<>();
         this.load(model);
+    }
+    public Controller(String model, String text){
+        list = new List<>();
     }
 
     public void load(String model) {
@@ -32,7 +37,22 @@ public class Controller<U> {
                     U u = (U)persoane;
                     this.list.addEnd(u);
                 }
-                scanner.close();
+            }
+            scanner.close();
+
+        }catch (Exception e){
+
+        }
+    }
+
+    public void save(String model){
+        try{
+            File file = new File("D:\\mycode\\Structuri de Date\\StructuriDeDate\\src\\ro\\mycode\\Data\\" + model);
+            if (model.equals("Masini.txt") || model.equals("Persoane.txt")) {
+                FileWriter writer = new FileWriter(file);
+                PrintWriter printWriter = new PrintWriter(writer);
+                printWriter.print(this.toSave());
+                printWriter.close();
             }
 
         }catch (Exception e){
@@ -40,9 +60,25 @@ public class Controller<U> {
         }
     }
 
-    public void afisare(){
-        for (int i = 0; i < list.size(); i++){
-            System.out.println("aaaa");
+    public String toSave(){
+        String text = "";
+        int i = 0;
+        for (i = 0; i < list.size() - 1; i++){
+            text += this.list.get(i) + "\n";
         }
+        text += this.list.get(i);
+        return text;
+
     }
+    public void afisare(){
+       this.list.afisare();
+
+    }
+    public void add(U u){
+        this.list.addEnd(u);
+    }
+    public void remove(U u){
+        this.list.removeObj(u);
+    }
+
 }
