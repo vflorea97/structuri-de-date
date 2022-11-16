@@ -1,0 +1,5 @@
+Vali,19
+Mihai,27
+Liviu,25
+Alex,12
+Iulian,18
