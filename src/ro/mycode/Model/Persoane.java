@@ -1,6 +1,6 @@
 package ro.mycode.Model;
 
-public class Persoane {
+public class Persoane implements Comparable<Persoane> {
 
     private String nume;
     private int varsta;
@@ -43,5 +43,17 @@ public class Persoane {
 
     public void setVarsta(int varsta) {
         this.varsta = varsta;
+    }
+
+    @Override
+    public int compareTo(Persoane o) {
+        if (this.nume.compareTo(o.nume) > 0){
+            return 1;
+        }
+        if (this.nume.compareTo(o.nume) < 0){
+            return -1;
+        }else{
+            return 0;
+        }
     }
 }

@@ -25,7 +25,6 @@ public class Lista{
 
         return  this.head;
     }
-
     //void afisare
     public void afisare (){
 
@@ -109,8 +108,6 @@ public class Lista{
         }
         temp.setNext(null);
     }
-
-
     public void removeElementPozitie(int poz){
 
         if (poz == 0){
