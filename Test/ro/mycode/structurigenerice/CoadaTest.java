@@ -1,9 +1,8 @@
-package ro.mycode.structurigenerice.Coada;
 
+package ro.mycode.structurigenerice;
 import org.junit.jupiter.api.Test;
 import ro.mycode.Model.Masina;
-
-import java.util.Stack;
+import ro.mycode.structurigenerice.Coada;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -88,5 +87,22 @@ class CoadaTest {
         boolean isEmpty = masinas.isEmpty();
 
         assertEquals(true,isEmpty);
+    }
+    //sa se inverseze un string folosind coada
+
+    @Test
+    public void problemaCoada() {
+
+        String text = "Am fost la munte si mi-a placut";
+        String text1 = "";
+
+        Coada<Character> characterCoada = new Coada<>();
+
+        for (int i = text.length() - 1; i >= 0; i--){
+            characterCoada.add(text.charAt(i));
+            text1 += characterCoada.peek();
+            characterCoada.remove();
+        }
+        System.out.println(text1);
     }
 }

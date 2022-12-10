@@ -1,8 +1,8 @@
-package ro.mycode.structurigenerice.Stiva;
+package ro.mycode.structurigenerice;
 
 import org.junit.jupiter.api.Test;
 import ro.mycode.Model.Masina;
-import ro.mycode.structurigenerice.List;
+import ro.mycode.structurigenerice.Stiva;
 
 import java.util.Stack;
 
@@ -94,16 +94,16 @@ class StivaTest {
     void  pb(){
         //sa verificam daca un text este corect balantat folosind stiva
         //"asdsad(asdadsa)asdasd)("
-        String text = "Ana (()()(are)(mai multe)) mere {[}}decat Andrei";
+        String text = "Ana (()()(are)(mai multe)) mere {[]}({})[]decat Andrei";
 
         Stiva<Character> characterStiva = new Stiva<>();
 
         boolean flag=true;
          for(int i=0;i<text.length();i++){
-             if(text.charAt(i)=='('){
+             if(text.charAt(i)=='(' || text.charAt(i) == '[' || text.charAt(i) == '{'){
 
                  characterStiva.push(text.charAt(i));
-             }else if(text.charAt(i)==')'){
+             }else if(text.charAt(i)==')' || text.charAt(i) == ']' || text.charAt(i) == '}'){
 
                     if(characterStiva.isEmpty()){
                         flag=false;

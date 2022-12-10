@@ -1,4 +1,4 @@
-package ro.mycode.structurigenerice.Coada;
+package ro.mycode.structurigenerice;
 
 import ro.mycode.simple_inlantuite_persoana.Node;
 import ro.mycode.structurigenerice.Nod;
@@ -15,7 +15,6 @@ public class Coada<K> {
             temp = temp.getNext();
         }
     }
-
     public void add(K k) {
         if (head == null) {
             head = new Nod<>(null, k);
@@ -54,6 +53,4 @@ public class Coada<K> {
         return false;
 
     }
-
-
 }

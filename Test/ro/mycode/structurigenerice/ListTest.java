@@ -1,6 +1,7 @@
 package ro.mycode.structurigenerice;
 
 import org.junit.jupiter.api.Test;
+import ro.mycode.Comparator.ComparatorMasinaAn;
 import ro.mycode.Model.Masina;
 import ro.mycode.Model.Persoane;
 
@@ -181,5 +182,81 @@ class ListTest {
         assertEquals(masina1,masinaList.get(1));
         assertEquals(masina2,masinaList.get(2));
         assertEquals(masina3,masinaList.get(3));
+    }
+
+    @Test
+    public void set() {
+        Masina masina = new Masina("Logan","Dacia",2010,true,"Benzina",1.6);
+        Masina masina1 = new Masina("A3","Audi",2012,true,"Motorina",1.8);
+        Masina masina2 = new Masina("X5","BMW",2018,true,"Motorina",1.8);
+        Masina masina3 = new Masina("2008","Peugeot",2020,true,"Benzina",1.6);
+
+        List<Masina> masinaList = new List<>();
+        masinaList.addEnd(masina);
+        masinaList.addEnd(masina1);
+        masinaList.addEnd(masina2);
+        masinaList.addEnd(masina3);
+
+        masinaList.set(masina2, 0);
+        assertEquals(masinaList.get(0),masina2);
+
+        masinaList.set(masina2, 1);
+        assertEquals(masinaList.get(1),masina2);
+
+        masinaList.set(masina2, 2);
+        assertEquals(masinaList.get(2),masina2);
+
+        masinaList.set(masina2, 3);
+        assertEquals(masinaList.get(3),masina2);
+    }
+
+    @Test
+    public void sort() {
+        Masina masina = new Masina("Logan","Dacia",2010,true,"Benzina",1.6);
+        Masina masina1 = new Masina("A3","Audi",2012,true,"Motorina",1.8);
+        Masina masina2 = new Masina("X5","BMW",2018,true,"Motorina",1.8);
+        Masina masina3 = new Masina("2008","Peugeot",2020,true,"Benzina",1.6);
+        Masina masina4 = new Masina("PAC","PACPAC",2010,true,"Benzina",1.6);
+        Masina masina5 = new Masina("Poc","BMW",2003,false,"Motorina",1.6);
+
+        List<Masina> masinaList = new List<>();
+        masinaList.addEnd(masina);
+        masinaList.addEnd(masina1);
+        masinaList.addEnd(masina2);
+        masinaList.addEnd(masina3);
+        masinaList.addEnd(masina4);
+        masinaList.addEnd(masina5);
+
+        masinaList.sort();
+
+        assertEquals(masina3,masinaList.get(0));
+        assertEquals(masina2,masinaList.get(5));
+
+    }
+
+    @Test
+    public void sortComparator() {
+        ComparatorMasinaAn comparatorMasinaAn = new ComparatorMasinaAn();
+
+        Masina masina = new Masina("Logan","Dacia",2010,true,"Benzina",1.6);
+        Masina masina1 = new Masina("A3","Audi",2012,true,"Motorina",1.8);
+        Masina masina2 = new Masina("X5","BMW",2018,true,"Motorina",1.8);
+        Masina masina3 = new Masina("2008","Peugeot",2020,true,"Benzina",1.6);
+        Masina masina4 = new Masina("PAC","PACPAC",2010,true,"Benzina",1.6);
+        Masina masina5 = new Masina("Poc","BMW",2003,false,"Motorina",1.6);
+
+        List<Masina> masinaList = new List<>();
+        masinaList.addEnd(masina);
+        masinaList.addEnd(masina1);
+        masinaList.addEnd(masina2);
+        masinaList.addEnd(masina3);
+        masinaList.addEnd(masina4);
+        masinaList.addEnd(masina5);
+
+        masinaList.sort(comparatorMasinaAn);
+
+        assertEquals(masina5,masinaList.get(0));
+        assertEquals(masina3,masinaList.get(5));
+
     }
 }

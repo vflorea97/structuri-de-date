@@ -74,4 +74,7 @@ class ListaTest {
         lista.afisare();
 
     }
+
+
+
 }
