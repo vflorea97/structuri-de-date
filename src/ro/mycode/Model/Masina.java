@@ -99,10 +99,10 @@ public class Masina implements Comparable<Masina>{
 
     @Override
     public int compareTo(Masina o) {
-        if (this.model.compareTo(o.model) > 0){
+        if (this.an > o.an){
             return 1;
         }
-        if (this.model.compareTo(o.model) < 0){
+        if (this.an < o.an){
             return -1;
         }else{
             return 0;

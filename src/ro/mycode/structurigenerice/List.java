@@ -1,6 +1,8 @@
 package ro.mycode.structurigenerice;
 
-public class List <U>{
+import java.util.Comparator;
+
+public class List <U extends Comparable<U>>{
 
     private Nod<U> head=null;
 
@@ -30,7 +32,6 @@ public class List <U>{
             temp.setNext(nod);
         }
     }
-
     public void removeStart(){
         head = head.getNext();
     }
@@ -123,5 +124,54 @@ public class List <U>{
         }
         return temp != null ? temp.getData() : null;
     }
+    public void set(U u, int i){
+        Nod<U> temp = head;
+        int contor = 0;
+        while (temp != null && i != contor){
+            temp = temp.getNext();
+            contor++;
+        }
 
+        temp.setData(u);
+    }
+    //todo:sorteaza
+
+    public void sort() {
+        boolean flag;
+        do {
+            flag = true;
+            for (int i = 0; i < size()-1; i++){
+
+                 U prev=this.get(i);
+                 U next=this.get(i+1);
+                 if(prev.compareTo(next)>0){
+                     U aux=prev;
+                     set(next,i);
+                     set(aux,i+1);
+
+                     flag=false;
+
+                 }
+            }
+        }
+        while (!flag);
+    }
+
+    public void sort(Comparator<U> comparator){
+        boolean flag;
+        do {
+            flag = true;
+            for (int i = 0; i < size() - 1; i++){
+                U prev = this.get(i);
+                U next = this.get(i + 1);
+                if (comparator.compare(prev, next) > 0){
+                    U aux = prev;
+                    set(next, i);
+                    set(aux, i + 1);
+                    flag = false;
+                }
+            }
+
+        }while (!flag);
+    }
 }

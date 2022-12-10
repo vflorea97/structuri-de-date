@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Controller<U> {
+public class Controller<U extends Comparable<U>> {
 
     private List<U> list;
 

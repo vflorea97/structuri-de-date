@@ -1,4 +1,4 @@
-package ro.mycode.structurigenerice.Stiva;
+package ro.mycode.structurigenerice;
 
 import ro.mycode.structurigenerice.Nod;
 
