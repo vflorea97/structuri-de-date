@@ -1,8 +1,4 @@
-Logan,Dacia,2010,true,Benzina,1.6
-A3,Audi,2012,true,Motorina,1.8
-X5,BMW,2018,true,Motorina,1.8
-2008,Peugeot,2020,true,Benzina,1.6
-Logan,Dacia,2010,true,Benzina,1.6
-A3,Audi,2012,true,Motorina,1.8
-X5,BMW,2018,true,Motorina,1.8
-2008,Peugeot,2020,true,Benzina,1.6
+Andrei,Logan,Dacia,2010,true,Benzina,1.6
+Alex,A3,Audi,2012,true,Motorina,1.8
+Marian,X5,BMW,2018,true,Motorina,1.8
+George,2008,Peugeot,2020,true,Benzina,1.6
